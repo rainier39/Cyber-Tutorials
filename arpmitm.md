@@ -11,6 +11,7 @@ Other, more secure setups are absolutely possible and recommended. For instance,
 We need to allow our attacker machine to perform the same role as a router or switch. That is, the attacker machine needs to be able to forward network traffic on behalf of other machines. By default, computers are configured to not do this, which is a problem. The following commands temporarily enable forwarding for both IPv4 and IPv6. The IPv6 part is important as it is often overlooked, and it's pretty common for some traffic on a local network to use IPv6. This configuration will not survive a reboot. If you want these changes to be persistent, they have to be written to a configuration file which will vary depending on which Linux distribution you use. The following commands worked for me on Kali Linux, and will likely work on most distributions.
 
 >sudo sysctl -w net.ipv4.ip_forward=1
+
 >sudo sysctl -w net.ipv6.conf.all.forwarding=1
 
 # 2. Get IPs of victim machine and router.
@@ -26,6 +27,7 @@ Just to be safe, run the following command which displays some network informati
 We will now run a tool which constantly sends ARP responses in order to trick victim machines into thinking that the attacker machine is the other victim. We need to open two terminal windows, and continuously run two instances of the tool in order to send these messages to both machines, respectively. In the following commands replace "victimip" and "routerip" with the appropriate IP addresses for your setup.
 
 >sudo arpspoof -i eth0 -t victimip routerip
+
 >sudo arpspoof -i eth0 -t routerip victimip
 
 Leave these terminal windows running. If these commands fail because the tool isn't installed, run the following command to install it and then try again.

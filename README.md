@@ -3,3 +3,9 @@ I created this repository for my own personal future reference, possibly demonst
 ## Tutorial Index
 - ARP Man-In-The-Middle: how to perform a Man-In-The-Middle attack using ARP spoofing.
 - RSA with OpenSSL: how to generate and securely store RSA keys with OpenSSL, and how to generate a self-signed certificate.
+## Planned Tutorials
+- Server Hardening with IPTables: setting firewall rules with IPTables to harden a home or production server.
+- Desktop Hardening with IPTables (??): same as above but for a desktop computer.
+- Antivirus on Linux: how to install and configure ClamAV to scan for malware on a Linux system.
+- Android Hardening Guide (??): hardening an Android device for security and privacy purposes.
+- Windows 11 Hardening Guide (??): same as above but for Windows 11.

@@ -9,3 +9,4 @@ I created this repository for my own personal future reference, possibly demonst
 - Antivirus on Linux: how to install and configure ClamAV to scan for malware on a Linux system.
 - Android Hardening Guide (??): hardening an Android device for security and privacy purposes.
 - Windows 11 Hardening Guide (??): same as above but for Windows 11.
+- Configuring Apache2 with a self-signed SSL certificate.

@@ -14,3 +14,4 @@ I created this repository for my own personal future reference, possibly demonst
 - Configuring Apache2 with a self-signed SSL certificate.
 - Automounting disks on Linux (using /etc/fstab file).
 - Setting up encrypted disks on Linux with cryptsetup (builds on previous tutorial).
+- Password Cracking with Hashcat: self explanatory.

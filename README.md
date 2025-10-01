@@ -3,6 +3,7 @@ I created this repository for my own personal future reference, possibly demonst
 ## Tutorial Index
 - ARP Man-In-The-Middle: how to perform a Man-In-The-Middle attack using ARP spoofing.
 - C State on Linux: how to fix a very niche freezing issue with Debian on early generation AMD Ryzen processors. Or just how to set the max C state on Linux (Debian).
+- Changing your Hostname on Linux: how to change your computer's hostname (Linux).
 - Install Arch Linux: how to install Arch Linux (barebones install, in an Oracle VirtualBox VM).
 - RSA with OpenSSL: how to generate and securely store RSA keys with OpenSSL, and how to generate a self-signed certificate.
 ## Planned Tutorials

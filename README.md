@@ -4,6 +4,7 @@ I created this repository for my own personal future reference, possibly demonst
 - [ARP Man-In-The-Middle](https://github.com/rainier39/Cyber-Tutorials/blob/main/arpmitm.md): how to perform a Man-In-The-Middle attack using ARP spoofing.
 - [C State on Linux](https://github.com/rainier39/Cyber-Tutorials/blob/main/cstate.md): how to fix a very niche freezing issue with Debian on early generation AMD Ryzen processors. Or just how to set the max C state on Linux (Debian).
 - [Changing your Hostname on Linux](https://github.com/rainier39/Cyber-Tutorials/blob/main/linuxhostname.md): how to change your computer's hostname (Linux).
+- [Creating users on Linux](https://github.com/rainier39/Cyber-Tutorials/blob/main/linuxusercreation.md): how to create user accounts on Linux via the command line.
 - [Install Arch Linux](https://github.com/rainier39/Cyber-Tutorials/blob/main/installarchlinux.md): how to install Arch Linux (barebones install, in an Oracle VirtualBox VM).
 - [RSA with OpenSSL](https://github.com/rainier39/Cyber-Tutorials/blob/main/rsawithopenssl.md): how to generate and securely store RSA keys with OpenSSL, and how to generate a self-signed certificate.
 ## Planned Tutorials

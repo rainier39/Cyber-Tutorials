@@ -6,10 +6,9 @@ I created this repository for my own personal future reference, possibly demonst
 - [Changing your Hostname on Linux](https://github.com/rainier39/Cyber-Tutorials/blob/main/linuxhostname.md): how to change your computer's hostname (Linux).
 - [Creating users on Linux](https://github.com/rainier39/Cyber-Tutorials/blob/main/linuxusercreation.md): how to create user accounts on Linux via the command line.
 - [Install Arch Linux](https://github.com/rainier39/Cyber-Tutorials/blob/main/installarchlinux.md): how to install Arch Linux (barebones install, in an Oracle VirtualBox VM).
+- [Linux Hardening with IPTables](https://github.com/rainier39/Cyber-Tutorials/blob/main/linuxhardeningiptables.md): how to harden a Linux (Debian/Ubuntu) server or desktop.
 - [RSA with OpenSSL](https://github.com/rainier39/Cyber-Tutorials/blob/main/rsawithopenssl.md): how to generate and securely store RSA keys with OpenSSL, and how to generate a self-signed certificate.
 ## Planned Tutorials
-- Server Hardening with IPTables: setting firewall rules with IPTables to harden a home or production server.
-- Desktop Hardening with IPTables (??): same as above but for a desktop computer.
 - Antivirus on Linux: how to install and configure ClamAV to scan for malware on a Linux system.
 - Android Hardening Guide (??): hardening an Android device for security and privacy purposes.
 - Windows 11 Hardening Guide (??): same as above but for Windows 11.

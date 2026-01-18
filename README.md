@@ -5,6 +5,7 @@ I created this repository for my own personal future reference, possibly demonst
 - [C State on Linux](https://github.com/rainier39/Cyber-Tutorials/blob/main/cstate.md): how to fix a very niche freezing issue with Debian on early generation AMD Ryzen processors. Or just how to set the max C state on Linux (Debian).
 - [Changing your Hostname on Linux](https://github.com/rainier39/Cyber-Tutorials/blob/main/linuxhostname.md): how to change your computer's hostname (Linux).
 - [Creating users on Linux](https://github.com/rainier39/Cyber-Tutorials/blob/main/linuxusercreation.md): how to create user accounts on Linux via the command line.
+- [Finding Executables with setuid/setgid on Linux](https://github.com/rainier39/Cyber-Tutorials/blob/main/linuxfindsetuidandsetgid.md): how to find executables with potentially dangerous setuid/setgid bits.
 - [Install Arch Linux](https://github.com/rainier39/Cyber-Tutorials/blob/main/installarchlinux.md): how to install Arch Linux (barebones install, in an Oracle VirtualBox VM).
 - [Linux Hardening with IPTables](https://github.com/rainier39/Cyber-Tutorials/blob/main/linuxhardeningiptables.md): how to harden a Linux (Debian/Ubuntu) server or desktop.
 - [RSA with OpenSSL](https://github.com/rainier39/Cyber-Tutorials/blob/main/rsawithopenssl.md): how to generate and securely store RSA keys with OpenSSL, and how to generate a self-signed certificate.

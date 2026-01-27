@@ -20,7 +20,7 @@ If you are SSHing into a server, you will want to create a rule allowing SSH. If
 
 > sudo iptables -A INPUT -p tcp --dport=22 -j ACCEPT
 
-> sudo iptables -A OUTPUT -p tcp --sport=22 -m --state ESTABLISHED,RELATED -j ACCEPT
+> sudo iptables -A OUTPUT -p tcp --sport=22 -m state --state ESTABLISHED,RELATED -j ACCEPT
 
 The `-A` flag means "append" so we are adding a new rule to a specified chain. The `-p` flag means protocol, in this case being TCP as SSH runs over TCP. The port flags are destination and source port, respectively. The `-j` flag specifies what should be done when packets matching this rule are encountered.
 
@@ -64,7 +64,7 @@ This is for a server which hosts a DNS server.
 
 > sudo iptables -A INPUT -p udp --dport 53 -j ACCEPT
 
-> sudo iptables -A OUTPUT -p udp --sport 53 -m --state ESTABLISHED,RELATED -j ACCEPT
+> sudo iptables -A OUTPUT -p udp --sport 53 -m state --state ESTABLISHED,RELATED -j ACCEPT
 
 Once again, this allows DNS queries to be answered by the server. Replace the port number to allow any other service that runs over UDP.
 
@@ -73,20 +73,20 @@ The following commands will allow one to ping the server (e.g. using the ping co
 
 > sudo iptables -A INPUT -p icmp --icmp-type echo-request -j ACCEPT
 
-> sudo iptables -A OUTPUT -p icmp --icmp-type echo-reply -m --state ESTABLISHED,RELATED -j ACCEPT
+> sudo iptables -A OUTPUT -p icmp --icmp-type echo-reply -m state --state ESTABLISHED,RELATED -j ACCEPT
 
 ### Allow package updates/upgrades (optional).
 One may notice that the server is no longer able to update or upgrade with apt (or anything else). On many real production servers, this wouldn't be a problem as the server would never update but rather be imaged with a hopefully thoroughly tested updated server image. For home servers, it's easiest to simply use a package manager to apply updates as usual. This can be allowed with the following commands:
 
-> sudo iptables -A INPUT -p udp --sport 53 -m --state ESTABLISHED,RELATED -j ACCEPT
+> sudo iptables -A INPUT -p udp --sport 53 -m state --state ESTABLISHED,RELATED -j ACCEPT
 
 > sudo iptables -A OUTPUT -p udp --dport 53 -j ACCEPT
 
-> sudo iptables -A INPUT -p tcp --sport 80 -m --state ESTABLISHED,RELATED -j ACCEPT
+> sudo iptables -A INPUT -p tcp --sport 80 -m state --state ESTABLISHED,RELATED -j ACCEPT
 
 > sudo iptables -A OUTPUT -p tcp --dport 80 -j ACCEPT
 
-> sudo iptables -A INPUT -p tcp --sport 443 -m --state ESTABLISHED,RELATED -j ACCEPT
+> sudo iptables -A INPUT -p tcp --sport 443 -m state --state ESTABLISHED,RELATED -j ACCEPT
 
 > sudo iptables -A OUTPUT -p tcp --dport 443 -j ACCEPT
 
@@ -104,7 +104,7 @@ These rules are suitable for desktops only.
 
 > sudo ip6tables -P OUTPUT ACCEPT
 
-> sudo ip6tables -A INPUT -m --state RELATED,ESTABLISHED -j ACCEPT
+> sudo ip6tables -A INPUT -m state --state RELATED,ESTABLISHED -j ACCEPT
 
 > sudo ip6tables -A INPUT -i lo -j ACCEPT
 

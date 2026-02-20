@@ -3,9 +3,7 @@ Hardening is an effective and standard technique used to secure devices, especia
 
 > sudo apt-get install iptables iptables-persistent
 
-On other Linux distributions, other firewall programs are the standard. For example, on Fedora/Red Hat distros you would likely want to use firewalld instead. This tutorial pertains to Debian-based distributions, however, where iptables is the standard.
-
-iptables is a relatively simple rule-based firewall program that essentially ties in to the Linux kernel's networking in order to filter network traffic. iptables has some state management capabilities which we will be using later on in the tutorial. I.E. iptables keeps track of ongoing network connections and is aware of when a connection is brand new, incoming, outgoing, etc. It is also possible to use a program called ufw (uncomplicated firewall) which is essentially just a wrapper around iptables. I don't personally find iptables to be particularly complicated so I prefer to cut out the middleman and just use iptables.
+iptables is a relatively simple rule-based firewall program that essentially ties in to the Linux kernel's networking in order to filter network traffic. iptables has some state management capabilities which we will be using later on in the tutorial. I.E. iptables keeps track of ongoing network connections and is aware of when a connection is brand new, incoming, outgoing, etc. It is also possible to use a program called ufw (uncomplicated firewall) which is essentially just a wrapper around iptables. I don't personally find iptables to be particularly complicated so I prefer to cut out the middleman and just use iptables. Others may prefer to use programs such as firewalld (Fedora/Red Hat Linux) or ufw (Ubuntu) which use iptables or nftables as their backend.
 
 # 1. Set up IPv4 firewall rules.
 Either physically log into the server or log into the server via SSH. Whatever the case may be, be logged into the server either as root or as an account with superuser privileges (sudo). If you have a desktop environment (not recommended for a server), open your terminal emulator. Otherwise, you should already be in the command line in one form or another.
@@ -120,8 +118,8 @@ These rules are suitable for desktops only.
 # 3. Save firewall rules.
 As of current, all of your firewall rules won't persist after a reboot. One can make them permanent with the following command:
 
-> sudo iptables-save
+> sudo iptables-save > /etc/iptables/rules.v4
 
 For the IPv6 rules:
 
-> sudo ip6tables-save
+> sudo ip6tables-save > /etc/iptables/rules.v6

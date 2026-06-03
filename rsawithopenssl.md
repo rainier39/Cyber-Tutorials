@@ -6,27 +6,27 @@ Note that this tutorial assumes you're working in a Linux/Unix environment. All 
 # 1. Generating a private key.
 The following command will generate and output an RSA private key. It is very important that this key is kept in a secure environment with the fewest possible people being allowed to access it. More information is given below about how to store the key in a more secure fashion. Note that the "4096" in the following command represents the key size in bits. A key size of 2048 bits may also be used if performance is an issue, but NIST recommends this only until the year 2030. A key size of 1024 bits has been standard previously but is no longer recommended or even supported by some applications such as web browsers. I would recommend using a keysize of 4096 in order to be "future proof." RSA keys are often used in SSL certificates to secure web traffic, and Certificate Authorities typically support up to 4096 bit keys. 3072 bit keys are also possible if one is so inclined, and provide security beyond the year 2030. Larger key sizes such as 7680 and 15360 bits aren't as likely to be supported and have an even greater performance impact.
 
->openssl genrsa -out private.pem 4096
+> openssl genrsa -out private.pem 4096
 
 To prevent other users in a Linux environment (aside from the root user and/or your user) from reading the private key, you may run the following command:
 
->chmod 600 private.pem
+> chmod 600 private.pem
 
 It is also possible to encrypt the private key using openssl when one generates it. You will be prompted for a passphrase, and the key will be outputted encrypted. Most tutorials use triple DES for this, but I strongly recommend not doing that and using a secure algorithm such as AES as shown below. Triple DES has been deprecated by NIST and replaced with AES. I use AES256, but other key sizes are supported and may also be used such as AES128 or AES192. Running "openssl --help" will reveal which algorithms and key sizes are supported by your openssl instance.
 
->openssl genrsa -aes256 -out private.pem 4096
+> openssl genrsa -aes256 -out private.pem 4096
 
 # 2. Generating a public key.
 The following command will generate a public key which is paired with the private key. It takes the private key as an input because the public key is mathematically derived from the private key. There is no need to hide or secure the public key, as there shouldn't be any harm in someone being able to read it. 
 
->openssl rsa -in private.pem -pubout -out public.pem
+> openssl rsa -in private.pem -pubout -out public.pem
 
 # 3. Creating a self-signed x509 certificate.
 x509 certificates are a standard type of digital certificate which are used by websites in order to establish an encrypted connection with your web browser, among other things. These certificates provide the public key of the entity you're communicating with, and are often signed by a CA (Certificate Authority) which are trusted organizations that help to ensure certificates are only issued to the actual website owner. This way, an attacker cannot simply present their own public key and impersonate a website as part of a Man-In-The-Middle attack. For this tutorial, the certificate will not be signed by a CA but rather will be a self-signed certificate. One's own private key will be used to sign the certificate. Therefore, this certificate won't be trusted by web browsers, they will display a warning which will probably scare away many users. The certificate will still function and encrypt web traffic if the user proceeds, however, making it not wholly useless. I might make another tutorial later on showing how to install a self signed certificate on a webserver in order to actually use it.
 
 Note that the certificate expires in 199 days. The standard for a certificate's maximum lifetime is 398 days currently, after which browsers and software oftentimes consider a certificate invalid even if one has set a higher expiry time. On March 15th, 2026 the maximum lifetime will be lowered to 200 days, however. On March 15th, 2027 it will be lowered to 100 days, and on March 15th, 2029 it will be lowered all the way down to 47 days. Since March 15th, 2026 is less than a year away as of the time this tutorial is being written, a certificate set to expire in about a year may be considered invalid before then so setting it in accordance with the 200 day standard is safer.
 
->openssl req -key private.pem -new -x509 -days 199 -out mycert.crt
+> openssl req -key private.pem -new -x509 -days 199 -out mycert.crt
 
 # Sources.
 https://en.wikipedia.org/wiki/RSA_cryptosystem
